@@ -1,6 +1,13 @@
 
 
-void main(){
+import 'collections/collections.dart';
+
+void main() {
+  Collections collections = Collections();
+  collections.listPractice();
+}
+
+void variableTest(){
  //타입  변수명 할당  값
   String name = "신희정";
   print(name);
@@ -23,4 +30,8 @@ void main(){
 
   // 상수를 final, const로 입력
   const name5 = "시니정"; //변경 불가
+
+  int? age2 = null;
+
+  age2 = 1;
 }
