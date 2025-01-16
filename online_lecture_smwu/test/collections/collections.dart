@@ -11,6 +11,14 @@ class Collections {
 
   void mapPractice(){
     Map<String, int> nameAge2 = {};
+    nameAge2.addAll({"신희정": 25, "유지민": 26, "이여름": 28});
+
+    nameAge2.removeWhere(
+        (key, value){
+          return key == "유지민";
+        },
+    );
+    print(nameAge2);
     nameAge2["시니정"] = 24;
     nameAge2["배채연"] = 18;
     nameAge2["이연우"] = 32;
@@ -25,6 +33,9 @@ class Collections {
     country.add("이탈리아");
     country.add("스위스");
     country.remove("한국");
+    print(country);
+
+    country.removeWhere((element) => element == "일본",);
     print(country);
   }
 

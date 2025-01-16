@@ -5,11 +5,15 @@ import 'package:online_lecture_smwu/screen/column_screen.dart';
 import 'package:online_lecture_smwu/screen/container_practice_screen.dart';
 import 'package:online_lecture_smwu/screen/container_screen.dart';
 import 'package:online_lecture_smwu/screen/image/image_screen.dart';
+import 'package:online_lecture_smwu/screen/listview/listview_screen.dart';
 import 'package:online_lecture_smwu/screen/row/row_practice_screen.dart';
 import 'package:online_lecture_smwu/screen/row/row_screen.dart';
 import 'package:online_lecture_smwu/screen/stack/stack_practice_screen.dart';
 import 'package:online_lecture_smwu/screen/stack/stack_screen.dart';
 import 'package:online_lecture_smwu/screen/text/text_screen.dart';
+
+import 'listview/listview_builder_practice_screen.dart';
+import 'listview/listview_builder_screen.dart';
 
 class ButtonScreen extends StatelessWidget {
   const ButtonScreen({super.key});
@@ -136,6 +140,36 @@ class ButtonScreen extends StatelessWidget {
                     ));
                   },
                   child: const Text("Stack 실습")),
+              const SizedBox(height: 10),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(
+                      builder: (context) {
+                        return const ListviewScreen();
+                      },
+                    ));
+                  },
+                  child: const Text("Listview")),
+              const SizedBox(height: 10),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(
+                      builder: (context) {
+                        return const ListviewBuilderScreen();
+                      },
+                    ));
+                  },
+                  child: const Text("ListviewBuilder")),
+              const SizedBox(height: 10),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(
+                      builder: (context) {
+                        return const ListviewBuilderPracticeScreen();
+                      },
+                    ));
+                  },
+                  child: const Text("ListviewBuilder 실습")),
             ],
           ),
         ),
