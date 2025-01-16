@@ -9,6 +9,25 @@ class Collections {
     print(list);
   }
 
+  void mapPractice(){
+    Map<String, int> nameAge2 = {};
+    nameAge2["시니정"] = 24;
+    nameAge2["배채연"] = 18;
+    nameAge2["이연우"] = 32;
+    nameAge2.remove("배채연");
+    print(nameAge2);
+  }
+  void setPractice(){
+    Set<String> country = {};
+    country.add("한국");
+    country.add("미국");
+    country.add("일본");
+    country.add("이탈리아");
+    country.add("스위스");
+    country.remove("한국");
+    print(country);
+  }
+
 
   void listAdd() {
     int age = 25;
@@ -50,5 +69,34 @@ class Collections {
 
     int ageFour = ageList[3];
     print("ageFour : $ageFour");
+  }
+
+  void collectionMap(){
+    Map<String, int> nameAgeMap = {};
+    nameAgeMap["신희정"] = 25;
+    print(nameAgeMap);
+
+    Map<String, dynamic> dynamicMap = {};
+    dynamicMap["a"] = true;
+    dynamicMap["b"] = 2;
+    dynamicMap["c"] = "고양이";
+    print(dynamicMap);
+    print("get dynamicMap : ${dynamicMap["b"]}");
+
+    dynamicMap.remove("c");
+    print("remove dynamicMap: $dynamicMap");
+    dynamicMap.length;
+    dynamicMap.clear();
+  }
+
+  void collectionSet(){
+    Set ss = {};
+    ss.add("a");
+    ss.add(1);
+    print("collectionSet 1 : $ss");
+
+    ss.remove("a");
+    print("collectionSet 2 : $ss");
+
   }
 }

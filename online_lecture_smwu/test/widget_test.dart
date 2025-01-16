@@ -4,7 +4,8 @@ import 'collections/collections.dart';
 
 void main() {
   Collections collections = Collections();
-  collections.listPractice();
+  collections.mapPractice();
+  collections.setPractice();
 }
 
 void variableTest(){
