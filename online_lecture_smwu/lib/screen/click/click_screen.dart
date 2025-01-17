@@ -65,7 +65,12 @@ class _ClickScreenState extends State<ClickScreen> {
                 ),
               ),
               child: const Text("TextButton")),
-          IconButton(onPressed: () {}, icon: const Icon(Icons.add)),
+          IconButton(
+              onPressed: () {
+                value++;
+                setState(() {});
+              },
+              icon: const Icon(Icons.add)),
         ],
       ),
     );
