@@ -3,8 +3,13 @@ import 'package:flutter/material.dart';
 class TodoModel {
   String name;
   bool complete;
-
+  // 단축키 Alt+insert
   TodoModel({required this.name, this.complete = false});
+
+  @override
+  String toString() {
+    return 'TodoModel{name: $name, complete: $complete}';
+  }
 }
 
 class TodoList extends StatefulWidget {
@@ -15,7 +20,7 @@ class TodoList extends StatefulWidget {
 }
 
 class _TodoListState extends State<TodoList> {
-  TextEditingController controller = TextEditingController();
+  final TextEditingController controller = TextEditingController();
   List<TodoModel> todoList = [];
 
   @override
@@ -35,6 +40,11 @@ class _TodoListState extends State<TodoList> {
   }
 
   void addTodo() {
+    if(controller.text.isEmpty) return;
+    if (todoList.any((element) => controller.text == element.name)) return;
+    // todoList.firstWhere((element) {
+    //   return element.name == controller.text;
+    // },);
     setState(() {
       todoList.add(TodoModel(name: controller.text));
       controller.clear();
@@ -70,7 +80,7 @@ class _TodoListState extends State<TodoList> {
                   ),
                   TextButton(
                     onPressed: addTodo,
-                    child: Text(
+                    child: const Text(
                       "등록",
                       style: TextStyle(fontSize: 20),
                     ),
