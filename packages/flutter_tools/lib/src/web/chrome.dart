@@ -209,7 +209,8 @@ class ChromiumLauncher {
       '--disable-background-timer-throttling',
       // Since we are using a temp profile, disable features that slow the
       // Chrome launch.
-      '--disable-extensions',
+      //'--disable-extensions',
+      '--disable-web-security',
       '--disable-popup-blocking',
       '--bwsi',
       '--no-first-run',
