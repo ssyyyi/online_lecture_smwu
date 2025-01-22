@@ -108,7 +108,21 @@ class _MemberDetailScreenState extends State<MemberDetailScreen> {
               height: 10,
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () async {
+                Response response = await widget.dio.delete("/api/v1/member/delete", data: {
+                  "email" : emailController.text,
+                  "password" : pwController.text,
+                });
+
+                if(response.statusCode == 204){
+                  ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                    content: Text("성공"),
+                  ));
+
+                  await Future.delayed(Duration(seconds: 1));
+                  Navigator.pop(context, true);
+                }
+              },
               style: ElevatedButton.styleFrom(
                   fixedSize: Size(double.infinity, 50)),
               child: Text("삭제"),
