@@ -4,6 +4,7 @@ import 'package:online_lecture_smwu/screen/click/click_screen.dart';
 import 'package:online_lecture_smwu/screen/column_practice_screen.dart';
 import 'package:online_lecture_smwu/screen/column_row_practice_screen.dart';
 import 'package:online_lecture_smwu/screen/column_screen.dart';
+import 'package:online_lecture_smwu/screen/commerce/navigation/navigation_screen.dart';
 import 'package:online_lecture_smwu/screen/container_practice_screen.dart';
 import 'package:online_lecture_smwu/screen/container_screen.dart';
 import 'package:online_lecture_smwu/screen/default_tab_controller/default_tab_controller_screen.dart';
@@ -42,6 +43,19 @@ class ButtonScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
+              ElevatedButton(
+                  onPressed: () {
+                    //화면이동 Navigator
+                    // ctrl + space
+                    // 코드 정리 단축키: Ctrl + Alt + L
+                    Navigator.push(context, MaterialPageRoute(
+                      builder: (context) {
+                        return const NavigationScreen();
+                      },
+                    ));
+                  },
+                  child: const Text("Commerce")),
+              const SizedBox(height: 10),
               ElevatedButton(
                   onPressed: () {
                     //화면이동 Navigator
